@@ -27,9 +27,10 @@
                     // 简化后: return value !== 'left' && value !== 'right' ? false : true;
                     // 再次简化后: return !(value !== 'left' && value !== 'right')  
                     return value === 'left' || value === 'right'  // 终极版本
+                }
             }
         }
-}
+    }
 </script>
 
 <style lang="less">
@@ -50,9 +51,9 @@
     > .icon { order: 1; margin-right: .1em;}
     > .content { order : 2; }
     
-    &.icon-right{
+    &.icon-right {
     > .content { order : 1; }
     > .icon { order: 2; margin-right: 0; margin-left: .1em;} 
-        }
     }
+}
 </style>
