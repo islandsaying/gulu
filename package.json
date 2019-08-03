@@ -5,8 +5,5 @@
   "main": "index.js",
   "repository": "https://github.com/islandsaying/gulu.git",
   "author": "islandsaying <47809373+islandsaying@users.noreply.github.com>",
-  "license": "MIT",
-  "dependencies": {
-    "vue": "^2.6.10"
-  }
+  "license": "MIT"
 }
