@@ -1,9 +1,18 @@
 <template>
-    <button class="g-button">按钮</button>
+    <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
+        <svg v-if="icon" class="icon">
+            <use :xlink:href="`#i-${icon}`"></use>
+        </svg>
+        <div class="content">
+            <!-- slot 本身不能加class -->
+            <slot></slot>
+        </div>
+    </button>
 </template>
 
 <script>
     export default {
+        props:['icon','iconPosition']
 }
 </script>
 
@@ -15,14 +24,19 @@
         border-radius: var(--border-radius);
         border: 1px solid var(--border-color);
         background: var(--button-bg);
-    }
-    &:hover{
-        border-color: var(--border-color-hover);
-    }
-    &:active{
-        background-color:  var(--button-active-bg);
-    }
-    &:focus{
-        outline: none;
+        display: inline-flex; justify-content: center; align-items: center;
+        vertical-align: middle;  // 解决inline引起的上下不对齐
+
+    &:hover { border-color: var(--border-color-hover); }
+    &:active { background-color:  var(--button-active-bg); }
+    &:focus { outline: none; }
+
+    > .icon { order: 1; margin-right: .1em;}
+    > .content { order : 2; }
+    
+    &.icon-right{
+    > .content { order : 1; }
+    > .icon { order: 2; margin-right: 0; margin-left: .1em;} 
+        }
     }
 </style>
