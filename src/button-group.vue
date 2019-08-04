@@ -3,13 +3,32 @@
     <slot></slot>
   </div>
 </template>
-<script></script>
+<script>
+    export default {
+        mounted () {
+            // console.log(this.$el);
+            // console.log(this.$el.children);
+            // for(let node of this.$el.children){
+            //     console.log(node.nodeName);
+            // } 
+            for (let node of this.$el.children){
+                let name = node.nodeName.toLowerCase()
+                if (name !== 'button') {
+                    console.warn(`g-button-group 的子元素应该全是 g-button ,但你写的是 ${name}`)
+                }
+            }
+        }
+    }
+</script>
 <style lang="less">
   .g-button-group {
     display: inline-flex;
     vertical-align: middle;
     > .g-button {
-      border-radius: 0; margin-left: -1px;
+      border-radius: 0; 
+      &:not(:first-child) {
+        margin-left: -1px;
+      }
       &:first-child {
         border-top-left-radius: var(--border-radius);
         border-bottom-left-radius: var(--border-radius);
