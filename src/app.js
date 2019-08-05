@@ -8,12 +8,12 @@ Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
 
 new Vue({
-    el: "#app",
-    data: {
-        loading1: false,
-        loading2: true,
-        loading3: false,
-    }
+  el: "#app",
+  data: {
+    loading1: false,
+    loading2: true,
+    loading3: false,
+  }
 })
 
 import chai from 'chai'
@@ -21,26 +21,29 @@ import spies from 'chai-spies'
 chai.use(spies)
 
 const expect = chai.expect
-//单元测试
-{
+
+try {
+
+  //单元测试
+  {
     const Constructor = Vue.extend(Button)
     const vm = new Constructor({
-    propsData: {
+      propsData: {
         icon: 'settings'
-    }
+      }
     })
     vm.$mount()
     let useElement = vm.$el.querySelector('use')
     let href = useElement.getAttribute('xlink:href')
     expect(href).to.eq('#i-settings') //期望他等于'#i-settings'
-}
-{
+  }
+  {
     const Constructor = Vue.extend(Button)
     const vm = new Constructor({
-        propsData: {
+      propsData: {
         icon: 'settings',
         loading: true
-        }
+      }
     })
     vm.$mount()
     let useElement = vm.$el.querySelector('use')
@@ -48,8 +51,8 @@ const expect = chai.expect
     expect(href).to.eq('#i-loading')
     vm.$el.remove()
     vm.$destroy()
-}
-{
+  }
+  {
     const div = document.createElement('div')
     document.body.appendChild(div)
     const Constructor = Vue.extend(Button)
@@ -60,7 +63,7 @@ const expect = chai.expect
     })
     vm.$mount(div) //不挂载则不渲染,其css也就没用
     let svg = vm.$el.querySelector('svg')
-    let {order} = window.getComputedStyle(svg)
+    let { order } = window.getComputedStyle(svg)
     expect(order).to.eq('1') //css是字符串
     vm.$el.remove()
     vm.$destroy()
@@ -77,7 +80,7 @@ const expect = chai.expect
     })
     vm.$mount(div)
     let svg = vm.$el.querySelector('svg')
-    let {order} = window.getComputedStyle(svg)
+    let { order } = window.getComputedStyle(svg)
     expect(order).to.eq('2')  //right和上面就这个位置不一样,其他都一样
     vm.$el.remove()
     vm.$destroy()
@@ -94,10 +97,17 @@ const expect = chai.expect
     //     expect(1).to.eq(1)
     // })  错误的测试方法(放一个true语句在函数里面),违背了初衷
 
-    let spy = chai.spy(function(){})
+    let spy = chai.spy(function () { })
     vm.$on('click', spy)
     // 希望这个函数被执行
     let button = vm.$el
     button.click()
     expect(spy).to.have.been.called()
   }
+} catch (error) {
+  window.errors = [error]
+} finally {
+  window.errors.forEach((error) => {
+    console.error(error.message);
+  })
+}
