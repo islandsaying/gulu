@@ -107,7 +107,8 @@ try {
 } catch (error) {
   window.errors = [error]
 } finally {
-  window.errors.forEach((error) => {
+  //错误存在&&遍历错误
+  window.errors && window.errors.forEach((error) => {
     console.error(error.message);
   })
 }
