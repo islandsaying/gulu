@@ -48,7 +48,7 @@ components: {
     HelloWorld,
     'g-button': Button,
     'g-icon': Icon
-}
+    }
 }
 ```
 
