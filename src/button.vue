@@ -13,6 +13,7 @@
 <script>
     import Icon from './icon'
     export default {
+        name: 'GuluButton',
         components: {
             'g-icon': Icon
         },
@@ -41,7 +42,7 @@
     }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
