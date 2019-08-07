@@ -1,21 +1,31 @@
 ---
 title: Button
 ---
-
 # 按钮
+***
 
-## 简单用法
+#### 1.组件介绍
 
-#### 预览
-<br>
-<button-demos></button-demos>
+按钮组件功能及用法如下，支持添加icon，设置icon位置，加载状态，按钮形状等功能
 
-#### 代码
-<br>
+#### 2.使用方法
 
-```
-<g-button>默认按钮</g-button>
-<g-button icon="settings">默认按钮</g-button>
-<g-button :loading="true">默认按钮</g-button>
-<g-button disabled>默认按钮</g-button>
+<ClientOnly>
+  <button-demos></button-demos>
+</ClientOnly>
+
+#### 3.组件代码
+
+```HTML
+<div>
+  <g-button>默认按钮</g-button>
+  <g-button icon="settings" :loading="true">按钮</g-button>
+  <g-button icon="settings" icon-position="right">按钮</g-button>
+  <g-button icon="settings" circle :loading="toggle" @click="toggle=!toggle"></g-button>
+  <g-button-group>
+    <g-button icon="left">上一页</g-button>
+    <g-button>更多</g-button>
+    <g-button icon="right" icon-position="right">下一页</g-button>
+  </g-button-group>
+</div>
 ```
