@@ -20,26 +20,19 @@ export default {
   width: 50%;
   border: 1px solid red;
 
-//   $class: col-;
-//   @for $n from 1 through 24 {
-//     &.#{$class}#{$n} {
-//       width: ($n / 24) * 100%;
-//     }
-//   }
-//   @class: col-;
-//   .col-loop (@i) when (@i > 0){
-//       &.{@class}-@{i} {
-//           width: (@i / 24) * 100%;
-//       }
-//       .col-loop(@i - 1);
-//   }
-// }
-// .generate-columns(4);
-
-// .generate-columns(@n, @i: 1) when (@i =< @n) {
-//   .column-@{i} {
-//     width: (@i * 100% / @n);
-//   }
-//   .generate-columns(@n, (@i + 1));
-// }
+  .generate-columns(24);
+  .generate-columns(@n, @i: 1) when (@i =< @n) {
+    &.col-@{i} {
+      width: (@i * 100% / @n);
+    }
+    .generate-columns(@n, (@i + 1));
+  }
+  .generate-column(24);
+  .generate-column(@n, @i: 1) when (@i =< @n) {
+    &.offset-@{i} {
+      margin-left: (@i * 100% / @n);
+    }
+    .generate-column(@n, (@i + 1));
+  }
+}
 </style> 
