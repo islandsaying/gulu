@@ -36,7 +36,7 @@ export default {
 </script>
 <style scoped lang="less">
 .col {
-  width: 50%;
+
 
   .generate-columns(24);
   .generate-columns(@n, @i: 1) when (@i =< @n) {
