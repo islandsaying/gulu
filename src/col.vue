@@ -1,12 +1,6 @@
 <template>
-  <div
-    class="col"
-    :class="[`span && col-${span}`,offset && `offset-${offset}`]"
-    :style="{paddingLeft: gutter/2+'px', paddingRight: gutter/2+'px'}"
-  >
-    <div style="border: 1px solid green; height: 100px;">
+  <div class="col" :class="colClass" :style="colStyle">
       <slot></slot>
-    </div>
   </div>
 </template>
 <script>
@@ -24,6 +18,19 @@ export default {
     return {
       gutter: 0   //这个gutter只能接受赋值过来,不推荐props
     };
+  },
+  computed: {
+    colClass () {
+      let {span, offset} = this
+      return [span && `col-${span}`,offset && `offset-${offset}`]
+    },
+    colStyle () {
+      return {
+        //gutter会变化,所以不能放在静态data里面,要放入计算属性
+        paddingLeft: this.gutter/2+'px', 
+        paddingRight: this.gutter/2+'px'
+      }
+    }
   }
 };
 </script>
