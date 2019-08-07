@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>轱辘</title>
     <style>
-        *{margin: 0; padding: 0; box-sizing: border-box;}
-        #app{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #app {
             margin: 20px;
         }
-        body{
+
+        body {
             font-size: 14px;
         }
     </style>
     <style type="text/css">
-        .box{
+        .box {
             margin: 20px;
         }
     </style>
 </head>
+
 <body>
     <div id="app">
-        <input type="text" v-model="message">
+
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+        </g-row>
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+        </g-row>
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+            <g-col>4</g-col>
+        </g-row>
+        <g-row>
+            <g-col span="2">1</g-col>
+            <g-col span="22">11</g-col>
+        </g-row>
+        <g-row>
+            <g-col span="4">1</g-col>
+            <g-col span="20">11</g-col>
+        </g-row>
+        <hr>
         <div class="box">
             <g-input v-model="message"></g-input>
             <p>{{message}}</p>
@@ -46,7 +78,7 @@
         </div>
     </div>
 
-<script src="./src/app.js"></script>
+    <script src="./src/app.js"></script>
 </body>
 
 </html>
