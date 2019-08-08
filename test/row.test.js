@@ -32,9 +32,12 @@ describe('Row', () => {
             const cols = vm.$el.querySelectorAll('.col')
             expect(getComputedStyle(cols[0]).paddingRight).to.eq('10px')
             expect(getComputedStyle(cols[1]).paddingLeft).to.eq('10px')
-            done()  //done传入表示异步进行,此处是mounted完成时回调,直接获取是没有数据的
+            done() 
             vm.$el.remove()
             vm.$destroy()
+            //1.marginLeft和paddingRight这些属性得mounted完成后才能获取
+            //2.到底什么时候才能获取---利用异步的特性(等待其他操作都完成才执行)
+            //3.done表示异步执行
         },0)
     })
     it('接收 align 属性', () => {
