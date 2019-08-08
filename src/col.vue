@@ -56,6 +56,7 @@ export default {
 </script>
 <style scoped lang="less">
 .col {
+  //phone
   .generate-columns(24);
   .generate-columns(@n, @i: 1) when (@i =< @n) {
     &.col-@{i} {
@@ -70,70 +71,74 @@ export default {
     }
     .generate-column(@n, (@i + 1));
   }
-}
 
-@media (min-width: 577px) and(max-width: 768px) {
-  .generate-columns(24);
-  .generate-columns(@n, @i: 1) when (@i =< @n) {
-    &.col-ipad-@{i} {
-      width: (@i * 100% / @n);
+  @media (min-width: 577px) {
+    //ipad
+    .generate-columns(24);
+    .generate-columns(@n, @i: 1) when (@i =< @n) {
+      &.col-ipad-@{i} {
+        width: (@i * 100% / @n);
+      }
+      .generate-columns(@n, (@i + 1));
     }
-    .generate-columns(@n, (@i + 1));
+    .generate-column(24);
+    .generate-column(@n, @i: 1) when (@i =< @n) {
+      &.offset-ipad-@{i} {
+        margin-left: (@i * 100% / @n);
+      }
+      .generate-column(@n, (@i + 1));
+    }
   }
-  .generate-column(24);
-  .generate-column(@n, @i: 1) when (@i =< @n) {
-    &.offset-ipad-@{i} {
-      margin-left: (@i * 100% / @n);
+  @media (min-width: 769px) {
+    //narrow-pc
+    .generate-columns(24);
+    .generate-columns(@n, @i: 1) when (@i =< @n) {
+      &.col-narrow-pc-@{i} {
+        width: (@i * 100% / @n);
+      }
+      .generate-columns(@n, (@i + 1));
     }
-    .generate-column(@n, (@i + 1));
+    .generate-column(24);
+    .generate-column(@n, @i: 1) when (@i =< @n) {
+      &.offset-narrow-pc-@{i} {
+        margin-left: (@i * 100% / @n);
+      }
+      .generate-column(@n, (@i + 1));
+    }
   }
-}
-@media (min-width: 769px) and(max-width: 992px) {
-  .generate-columns(24);
-  .generate-columns(@n, @i: 1) when (@i =< @n) {
-    &.col-narrow-pc-@{i} {
-      width: (@i * 100% / @n);
+  @media (min-width: 993px) {
+    //pc
+    .generate-columns(24);
+    .generate-columns(@n, @i: 1) when (@i =< @n) {
+      &.col-pc-@{i} {
+        width: (@i * 100% / @n);
+      }
+      .generate-columns(@n, (@i + 1));
     }
-    .generate-columns(@n, (@i + 1));
+    .generate-column(24);
+    .generate-column(@n, @i: 1) when (@i =< @n) {
+      &.offset-pc-@{i} {
+        margin-left: (@i * 100% / @n);
+      }
+      .generate-column(@n, (@i + 1));
+    }
   }
-  .generate-column(24);
-  .generate-column(@n, @i: 1) when (@i =< @n) {
-    &.offset-narrow-pc-@{i} {
-      margin-left: (@i * 100% / @n);
+  @media (min-width: 1201px) {
+    //wide-pc
+    .generate-columns(24);
+    .generate-columns(@n, @i: 1) when (@i =< @n) {
+      &.col-wide-pc-@{i} {
+        width: (@i * 100% / @n);
+      }
+      .generate-columns(@n, (@i + 1));
     }
-    .generate-column(@n, (@i + 1));
-  }
-}
-@media (min-width: 993px) and(max-width: 1200px) {
-  .generate-columns(24);
-  .generate-columns(@n, @i: 1) when (@i =< @n) {
-    &.col-pc-@{i} {
-      width: (@i * 100% / @n);
+    .generate-column(24);
+    .generate-column(@n, @i: 1) when (@i =< @n) {
+      &.offset-wide-pc-@{i} {
+        margin-left: (@i * 100% / @n);
+      }
+      .generate-column(@n, (@i + 1));
     }
-    .generate-columns(@n, (@i + 1));
-  }
-  .generate-column(24);
-  .generate-column(@n, @i: 1) when (@i =< @n) {
-    &.offset-pc-@{i} {
-      margin-left: (@i * 100% / @n);
-    }
-    .generate-column(@n, (@i + 1));
-  }
-}
-@media (min-width: 1201px) {
-  .generate-columns(24);
-  .generate-columns(@n, @i: 1) when (@i =< @n) {
-    &.col-wide-pc-@{i} {
-      width: (@i * 100% / @n);
-    }
-    .generate-columns(@n, (@i + 1));
-  }
-  .generate-column(24);
-  .generate-column(@n, @i: 1) when (@i =< @n) {
-    &.offset-wide-pc-@{i} {
-      margin-left: (@i * 100% / @n);
-    }
-    .generate-column(@n, (@i + 1));
   }
 }
 </style> 
