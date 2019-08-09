@@ -22,7 +22,22 @@
     <style>
         .demo {
             border: 1px solid #666;
-            height: 100px;
+            min-height: 100px;
+        }
+        .sider {
+            background: #333;
+            width: 150px;
+        }
+        .sider.slide-enter, .sider.slide-leave-to {
+            margin-left: -150px;
+        }
+        .header {
+            background: #999;
+            height:  100px;
+        }
+        .footer {
+            background: #ccc;
+            height: 50px;
         }
     </style>
 </head>
@@ -30,12 +45,13 @@
 
 <div id="app">
     <g-layout style="height: 100vh">
-        <g-header class="demo">header</g-header>
+            <g-sider>sider</g-sider>
         <g-layout>
-            <g-sider class="demo">sider</g-sider>
-            <g-content class="demo">content</g-content>
+            <g-header>header</g-header>
+            <g-content>content</g-content>
+            <g-footer>footer</g-footer>
         </g-layout>
-        <g-footer class="demo">footer</g-footer>
+        
     </g-layout>    
 
 
