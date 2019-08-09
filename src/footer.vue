@@ -5,7 +5,5 @@
 </template>
 
 <style lang="less" scoped>
-    .footer{
-        
-    }
+
 </style>

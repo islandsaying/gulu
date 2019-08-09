@@ -10,6 +10,8 @@ import Header from './header'
 import Footer from './footer'
 import Sider from './sider'
 import Content from './content'
+import Toast from './toast'
+import plugin from './plugin'
 
 
 Vue.component('g-button', Button)
@@ -23,6 +25,8 @@ Vue.component('g-header',Header)
 Vue.component('g-sider',Sider)
 Vue.component('g-footer',Footer)
 Vue.component('g-content',Content)
+Vue.component('g-toast',Toast)
+Vue.use(plugin)
 
 
 new Vue({
@@ -33,6 +37,13 @@ new Vue({
     loading3: false,
     message: 'hi',
   },
+  created(){
+  },
+  methods:{
+    showToast(){
+      this.$toast("我是 message")
+    }
+  }
   //以下为测试暂用
   // created(){
   //   setTimeout(()=>{
@@ -42,10 +53,5 @@ new Vue({
   //     console.log('hi')
   //   },3000)
   // },
-  methods: {
-    inputChange (e) {
-      console.log(e)
-    }
-  }
 })
 
