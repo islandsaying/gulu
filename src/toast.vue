@@ -19,8 +19,11 @@ export default {
     name: 'GuluToast',
     props: {
       autoClose: {
-        type: Boolean,
-        default: true
+        type: [Boolean, Number],
+        default: 5,
+        validator (value) {
+          return value === false || typeof value === 'number';
+        }
       },
       position: {
         type: String,
@@ -71,16 +74,13 @@ export default {
         if (this.autoClose) {
           setTimeout(() => {
             this.close()
-          }, this.autoCloseDelay * 1000)
+          }, this.autoClose * 1000)
         }
       },
       close(){
         this.$el.remove() //元素移除
         this.$emit('close')
         this.$destroy() //组件自毁
-      },
-      log () {
-        console.log('测试')
       },
       onClickClose(){
         this.close()
@@ -117,7 +117,7 @@ export default {
       .toast {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        animation: slide-down $animation-duration;
+        animation: slide-down @animation-duration;
       }
     }
     &.position-bottom {
@@ -125,14 +125,14 @@ export default {
       .toast {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        animation: slide-up $animation-duration;
+        animation: slide-up @animation-duration;
       }
     }
     &.position-middle {
       top: 50%;
       transform: translateX(-50%) translateY(-50%);
       .toast {
-        animation: fade-in $animation-duration;
+        animation: fade-in @animation-duration;
       }
     }
   }
