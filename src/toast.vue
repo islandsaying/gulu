@@ -74,6 +74,7 @@ export default {
       },
       close(){
         this.$el.remove() //元素移除
+        this.$emit('close')
         this.$destroy() //组件自毁
       },
       log () {
