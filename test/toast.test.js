@@ -4,7 +4,7 @@ import Toast from '../src/toast'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
-Vue.config.errorHander = done
+//Vue.config.errorHander = done
 
 
 
