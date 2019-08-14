@@ -1,5 +1,5 @@
 module.exports = {
-    base:'/gulu/',
+    base: '/gulu/',
     title: 'islandsaying UI框架',
     description: '一个学习Vue的UI框架',
     themeConfig: {
@@ -9,6 +9,13 @@ module.exports = {
             { text: 'GitHub', link: 'https://github.com/islandsaying' },
         ],
         sidebar: [
+            {
+                title: '介绍',
+                collapsable: false,
+                children: [
+                    '/introduce/',
+                ]
+            },
             {
                 title: '入门',
                 children: [
