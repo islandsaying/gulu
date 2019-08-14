@@ -1,23 +1,4 @@
----
-title: Grid
----
-
-# 网格系统
-***
-
-1.组件介绍
-
-网格组件功能及用法如下，支持自动均分，设置单元宽度、间隔、排列方向等功能
-
-2.使用方法
-
-<ClientOnly>
-  <grid-demo></grid-demo>
-</ClientOnly>
-
-3.组件代码
-
-```HTML
+<template>
   <div>
     <g-row>
       <g-col span="8">8</g-col>
@@ -25,7 +6,7 @@ title: Grid
     </g-row>
     <br />
     <g-row>
-      <g-col span="8">8</g-col>
+      <g-col span="8">>8</g-col>
       <g-col span="6" offset="2">6</g-col>
       <g-col span="4" offset="4">4</g-col>
     </g-row>
@@ -43,4 +24,19 @@ title: Grid
     </g-row>
     <br />
   </div>
-```
+</template>
+
+<script>
+import Col from "../../../src/col";
+import Row from "../../../src/row";
+export default {
+  name: "",
+  components: {
+    "g-col": Col,
+    "g-row": Row
+  },
+  data() {
+    return {};
+  }
+};
+</script>

@@ -1,7 +1,7 @@
 module.exports = {
     base:'/gulu/',
-    title: '轱辘UI',
-    description: '一个好用的UI框架',
+    title: 'islandsaying UI框架',
+    description: '一个学习Vue的UI框架',
     themeConfig: {
         nav: [
             { text: '主页', link: '/' },
@@ -26,6 +26,7 @@ module.exports = {
                     '/components/toast',
                     '/components/tabs',
                     '/components/popover',
+                    '/components/collapse'
                 ]
             }
         ]

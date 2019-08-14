@@ -34,9 +34,8 @@ export default {
 </script>
 <style lang="less" scoped>
     .tabs-pane {
-        padding: 1em;
         &.active{
-
+            padding: 1em;
         }
     }
 </style>
