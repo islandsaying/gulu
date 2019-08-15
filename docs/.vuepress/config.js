@@ -1,6 +1,6 @@
 module.exports = {
     base: '/gulu/',
-    title: 'islandsaying UI框架',
+    title: '我的 UI框架',
     description: '一个学习Vue的UI框架',
     themeConfig: {
         nav: [

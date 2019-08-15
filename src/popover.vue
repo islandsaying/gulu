@@ -1,10 +1,8 @@
 <template>
   <div class="popover" ref="popover">
-    <div
-      ref="contentWrapper"
-      class="content-wrapper"
-      v-if="visible"
-      :class="{[`position-${position}`]:true}">
+    <div ref="contentWrapper" class="content-wrapper" v-if="visible"
+      :class="{[`position-${position}`]:true}"
+    >
       <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWrapper" style="display: inline-block;">
@@ -53,22 +51,22 @@ export default {
         this.$refs.popover.removeEventListener('mouseleave', this.close)
       }
     },
-    computed: {
-      openEvent () {
-        if (this.trigger === 'click') {
-          return 'click'
-        } else {
-          return 'mouseenter'
-        }
-      },
-      closeEvent () {
-        if (this.trigger === 'click') {
-          return 'click'
-        } else {
-          return 'mouseleave'
-        }
-      }
-  },
+  //   computed: {
+  //     openEvent () {
+  //       if (this.trigger === 'click') {
+  //         return 'click'
+  //       } else {
+  //         return 'mouseenter'
+  //       }
+  //     },
+  //     closeEvent () {
+  //       if (this.trigger === 'click') {
+  //         return 'click'
+  //       } else {
+  //         return 'mouseleave'
+  //       }
+  //     }
+  // },
   methods: {
     positionContent() {
       const { contentWrapper, triggerWrapper } = this.$refs;
@@ -91,23 +89,23 @@ export default {
         contentWrapper.style.top = positions[this.position].top + 'px'
 
     },
+    
     onClickDocument(e) {
-      if (
-        this.$refs.popover &&
-        (this.$refs.popover === e.target ||
-          this.$refs.popover.contains(e.target))
+      if (this.$refs.popover &&
+        (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))
       ) {
         return;
       }
-      if (
-        this.$refs.contentWrapper &&
-        (this.$refs.contentWrapper === e.target ||
-          this.$refs.contentWrapper.contains(e.target))
+      if (this.$refs.contentWrapper &&
+        (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))
       ) {
         return;
       }
       this.close();
     },
+    listenToDocument() {
+            document.addEventListener("click", this.onClickDocument);
+        },
     open() {
       this.visible = true;
       this.$nextTick(() => {

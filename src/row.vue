@@ -41,6 +41,7 @@ export default {
 <style scoped lang="less">
 .row {
   display: flex;
+  border: 1px solid gray;
   flex-wrap: wrap;
   &.align-left {
     justify-content: flex-start;

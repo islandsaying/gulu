@@ -20,7 +20,7 @@ import 'gulu/dist/index.css'
 export default {
     name: 'app',
     components: {
-        'z-button': Button
+        'g-button': Button
     }
 }
 ```

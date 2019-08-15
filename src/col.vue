@@ -1,6 +1,6 @@
 <template>
   <div class="col" :class="colClass" :style="colStyle">
-    <slot></slot>
+    <div class="col-slot"><slot></slot></div>
   </div>
 </template>
 <script>
@@ -55,7 +55,14 @@ export default {
 }
 </script>
 <style scoped lang="less">
+.col-slot {
+  border: 1px solid whitesmoke;
+  height: 100%;
+  background: grey;
+}
 .col {
+  height: 100px;
+  
   //phone
   .generate-columns(24);
   .generate-columns(@n, @i: 1) when (@i =< @n) {

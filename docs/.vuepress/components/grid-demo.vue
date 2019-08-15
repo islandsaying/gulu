@@ -6,7 +6,7 @@
     </g-row>
     <br />
     <g-row>
-      <g-col span="8">>8</g-col>
+      <g-col span="8">8</g-col>
       <g-col span="6" offset="2">6</g-col>
       <g-col span="4" offset="4">4</g-col>
     </g-row>
