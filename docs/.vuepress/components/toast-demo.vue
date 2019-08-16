@@ -17,17 +17,23 @@
 </template>
 
 <script>
-import Vue from "vue";
-import Toast from "../../../src/toast";
+import Vue from 'vue'
+Vue.component('GToast',()=> import('../../../src/toast'))
+// Vue.component('Plugin',()=> import('../../../src/plugin'))
+Vue.component('GButton',()=> import('../../../src/button'))
+Vue.component('GTabsPane',()=> import('../../../src/tabs-pane'))
+
+// import Vue from "vue";
+// import Toast from "../../../src/toast";
 import Plugin from "../../../src/plugin";
-import Button from "../../../src/button";
-import tabsPaneVue from '../../../src/tabs-pane';
+// import Button from "../../../src/button";
+// import TabsPane from '../../../src/tabs-pane';
 Vue.use(Plugin);
 export default {
-    components:{
-        'g-toast':Toast,
-        'g-button':Button
-    },
+    // components:{
+    //     'g-toast':Toast,
+    //     'g-button':Button
+    // },
     name: "",
     data() {
         return {};
@@ -40,26 +46,10 @@ export default {
         },
         showToast3() { this.$toast('出现底部位置自动关闭', { position:'bottom',autoClose:2, }, this.$refs.wrapper )
         },
-        showToast4() {
-            this.$toast('设置手动关闭按钮',
-                {
-                    autoClose:false,
-                    
-                },
-                this.$refs.wrapper
-            )
+        showToast4() { this.$toast('设置手动关闭按钮', { autoClose:false, }, this.$refs.wrapper ) 
         },
-        showToast5() {
-            this.$toast('设置手动关闭回调函数', 
-                { 
-                    autoClose:false, 
-                    closeButton: { 
-                        text: '关闭', 
-                        callback:()=> { 
-                            alert('弹窗被关闭了') 
-                        } 
-                    } 
-                }, this.$refs.wrapper )
+        showToast5() {this.$toast('设置手动关闭回调函数', { autoClose:false, closeButton: { text: '关闭', 
+                        callback:()=> { alert('弹窗被关闭了') } } }, this.$refs.wrapper )
         }
     }
 }

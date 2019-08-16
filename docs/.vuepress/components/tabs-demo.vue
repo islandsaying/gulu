@@ -19,19 +19,25 @@
 </template>
 
 <script>
-import Tabs from "../../../src/tabs";
-import TabsHead from "../../../src/tabs-head";
-import TabsBody from "../../../src/tabs-body";
-import TabsItem from "../../../src/tabs-item";
-import TabsPane from "../../../src/tabs-pane";
+import Vue from 'vue'
+Vue.component('GTabs',()=> import('../../../src/tabs'))
+Vue.component('GTabsHead',()=> import('../../../src/tabs-head'))
+Vue.component('GTabsBody',()=> import('../../../src/tabs-body'))
+Vue.component('GTabsItem',()=> import('../../../src/tabs-item'))
+Vue.component('GTabsPane',()=> import('../../../src/tabs-pane'))
+// import Tabs from "../../../src/tabs";
+// import TabsHead from "../../../src/tabs-head";
+// import TabsBody from "../../../src/tabs-body";
+// import TabsItem from "../../../src/tabs-item";
+// import TabsPane from "../../../src/tabs-pane";
 export default {
-    components: {
-        "g-tabs": Tabs,
-        "g-tabs-head": TabsHead,
-        "g-tabs-body": TabsBody,
-        "g-tabs-item": TabsItem,
-        "g-tabs-pane": TabsPane
-    },
+    // components: {
+    //     "g-tabs": Tabs,
+    //     "g-tabs-head": TabsHead,
+    //     "g-tabs-body": TabsBody,
+    //     "g-tabs-item": TabsItem,
+    //     "g-tabs-pane": TabsPane
+    // },
     name: "",
     data() {
         return {};

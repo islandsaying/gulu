@@ -18,20 +18,26 @@
 </template>
 
 <script>
-import Layout from "../../../src/layout";
-import Header from "../../../src/header";
-import Content from "../../../src/content";
-import Sider from "../../../src/sider";
-import Footer from "../../../src/footer";
+import Vue from 'vue'
+Vue.component('GLayout',()=> import('../../../src/layout'))
+Vue.component('GHeader',()=> import('../../../src/header'))
+Vue.component('GContent',()=> import('../../../src/content'))
+Vue.component('GSider',()=> import('../../../src/sider'))
+Vue.component('GFooter',()=> import('../../../src/footer'))
+// import Layout from "../../../src/layout";
+// import Header from "../../../src/header";
+// import Content from "../../../src/content";
+// import Sider from "../../../src/sider";
+// import Footer from "../../../src/footer";
 export default {
     name: "",
-    components: {
-        "g-layout": Layout,
-        "g-header": Header,
-        "g-content": Content,
-        "g-sider": Sider,
-        "g-footer": Footer
-    }
+    // components: {
+    //     "g-layout": Layout,
+    //     "g-header": Header,
+    //     "g-content": Content,
+    //     "g-sider": Sider,
+    //     "g-footer": Footer
+    // }
 };
 </script>
 

@@ -57,14 +57,17 @@
 </template>
 
 <script>
-import Popover from "../../../src/popover"
-import Button from "../../../src/button"
+import Vue from 'vue'
+Vue.component('GPopover',()=> import('../../../src/popover'))
+Vue.component('GButton',()=> import('../../../src/button'))
+// import Popover from "../../../src/popover"
+// import Button from "../../../src/button"
 export default {
     name: "",
-    components: {
-        "g-popover": Popover,
-        "g-button":Button
-    }
+    // components: {
+    //     "g-popover": Popover,
+    //     "g-button":Button
+    // }
 };
 </script>
 

@@ -15,17 +15,20 @@
 </template>
 
 <script>
-import Collapse from "../../../src/collapse";
-import CollapseItem from "../../../src/collapse-item";
+import Vue from 'vue'
+Vue.component('GCollapse',()=> import('../../../src/collapse'))
+Vue.component('GCollapseItem',()=> import('../../../src/collapse-item'))
+// import Collapse from "../../../src/collapse";
+// import CollapseItem from "../../../src/collapse-item";
 export default {
   data() {
     return {
       currentSelected: [1]
     };
   },
-  components: {
-    "g-collapse": Collapse,
-    "g-collapse-item": CollapseItem
-  }
+  // components: {
+  //   "g-collapse": Collapse,
+  //   "g-collapse-item": CollapseItem
+  // }
 };
 </script>

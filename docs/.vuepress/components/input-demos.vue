@@ -17,12 +17,14 @@
 </template>
 
 <script>
-import Input from '../../../src/input'
+import Vue from 'vue'
+Vue.component('GInput',()=> import('../../../src/input'))
+// import Input from '../../../src/input'
 export default {
     name: "",
-    components:{
-        'g-input':Input
-    },
+    // components:{
+    //     'g-input':Input
+    // },
     data() {
         return {
             message:''

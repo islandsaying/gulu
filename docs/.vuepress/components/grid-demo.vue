@@ -27,14 +27,17 @@
 </template>
 
 <script>
-import Col from "../../../src/col";
-import Row from "../../../src/row";
+import Vue from 'vue'
+Vue.component('GCol',()=> import('../../../src/col'))
+Vue.component('GRow',()=> import('../../../src/row'))
+// import Col from "../../../src/col";
+// import Row from "../../../src/row";
 export default {
   name: "",
-  components: {
-    "g-col": Col,
-    "g-row": Row
-  },
+  // components: {
+  //   "g-col": Col,
+  //   "g-row": Row
+  // },
   data() {
     return {};
   }

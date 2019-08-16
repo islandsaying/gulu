@@ -13,8 +13,11 @@
 </template>
 
 <script>
-import Button from "../../../src/button";
-import ButtonGroup from "../../../src/button-group";
+import Vue from 'vue'
+Vue.component('GButton',()=> import('../../../src/button'))
+Vue.component('GButtonGroup',()=> import('../../../src/button-group'))
+// import Button from "../../../src/button";
+// import ButtonGroup from "../../../src/button-group";
 export default {
     data() {
         return {
@@ -22,9 +25,9 @@ export default {
             toggle:false
         };
     },
-    components: {
-        "g-button": Button,
-        'g-button-group':ButtonGroup
-    },
+    // components: {
+    //     "g-button": Button,
+    //     'g-button-group':ButtonGroup
+    // },
 };
 </script>
