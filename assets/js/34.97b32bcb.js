@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[34],{266:function(t,n,e){"use strict";e.r(n);var s={name:"GuluTabsBody",inject:["eventBus"],data:function(){return{}}},a=e(1),u=Object(a.a)(s,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"tabs-body"},[this._t("default")],2)},[],!1,null,null,null);n.default=u.exports}}]);
