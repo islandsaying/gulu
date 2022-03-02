@@ -14,7 +14,7 @@
   "author": "islandsaying <47809373+islandsaying@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
-    "karma": "^4.2.0",
+    "karma": "^6.3.16",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "vue": "^2.6.10",
